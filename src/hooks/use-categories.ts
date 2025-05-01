@@ -15,7 +15,7 @@ const useGetCategoryQuery = () => {
         });
         return res.data;
       } catch (e) {
-        const error = e as AxiosError;
+        const error = e as AxiosError<{ message: string }>;
         throw Error(
           error.response?.data?.message || 'Failed to fetch categories'
         );

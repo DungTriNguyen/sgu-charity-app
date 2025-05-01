@@ -95,12 +95,14 @@ type TApiResponse<T = any> = {
 };
 
 type TStatisticData = {
-  organization_count: number;
-  individual_count: number;
-  user_count: number;
-  project_count: number;
-  donation_count: number;
-  total_donation_amount: number;
+  data: {
+    organization_count: number;
+    individual_count: number;
+    user_count: number;
+    project_count: number;
+    donation_count: number;
+    total_donation_amount: number;
+  };
 };
 
 type TSCategotyData = {

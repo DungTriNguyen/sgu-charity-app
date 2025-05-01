@@ -8,7 +8,25 @@ import { useDonationQuery } from '@/hooks/use-donation';
 import { useForm } from 'react-hook-form';
 import { useDebounce } from '@/hooks/use-debounce';
 import { usePagination } from '@/hooks/use-pagination';
+
 // const userId = 7;
+
+const mapToDonatedData = (data: TSDonationData): TDonatedData => ({
+  id: String(data.id),
+  supporter: data.name || '',
+  amount: data.amount,
+  updatedAt: data.created_at,
+  project_id: String(data.project.id),
+  project_name: data.project.name || '',
+  created_at: data.created_at,
+  status: data.is_anonymous,
+  status_label: data.anonymous_status_label,
+  payment_method_code: data.code || '',
+  project: {
+    name: data.project.name || '',
+  },
+});
+
 const OwnedDonateList = ({
   type = 'donate',
   userId,
@@ -42,7 +60,7 @@ const OwnedDonateList = ({
       />
       <OwnedDonateTable
         columns={type === 'donate' ? donatedColumn : statisticColumn}
-        data={donations?.data || []}
+        data={(donations?.data || []).map(mapToDonatedData)}
         loading={false}
         page={currentPage || 1}
         total={donations?.pagination?.total || 0}

@@ -61,7 +61,7 @@ const usePostRegisterIndividualMutation = () => {
     },
     onError: (error) => {
       toast.error('Lỗi', {
-        description: error.response?.data?.message,
+        description: error.message,
         duration: 5000,
       });
     },
@@ -86,7 +86,7 @@ const usePostRegisterOrganizationMutation = () => {
     },
     onError: (error) => {
       toast.error('Lỗi', {
-        description: error.response?.data?.message,
+        description: error.message,
         duration: 5000,
       });
     },

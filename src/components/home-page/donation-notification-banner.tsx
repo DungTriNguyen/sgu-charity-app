@@ -15,7 +15,6 @@ const DonationNotificationBanner: React.FC = () => {
     page: 1,
     limit: 5,
   });
-  console.log('donationList:', donations);
 
   const [notifications, setNotifications] = useState<TSDonationData[]>([]);
 

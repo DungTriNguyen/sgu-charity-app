@@ -1,5 +1,5 @@
 'use client';
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -7,62 +7,62 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { useLoginMutation } from '@/hooks/use-login';
-import { zodResolver } from '@hookform/resolvers/zod';
+// import {
+//   Form,
+//   FormControl,
+//   FormField,
+//   FormItem,
+//   FormLabel,
+//   FormMessage,
+// } from '@/components/ui/form';
+// import { Input } from '@/components/ui/input';
+// import { useLoginMutation } from '@/hooks/use-login';
+// import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
+// import { useSearchParams } from 'next/navigation';
+// import { useEffect } from 'react';
+// import { useForm } from 'react-hook-form';
+// import { z } from 'zod';
 
 const ForgotPasswordPage = () => {
-  const searchParams = useSearchParams();
-  const error = searchParams.get('error');
+  // const searchParams = useSearchParams();
+  // const error = searchParams.get('error');
 
-  const formSchema = z.object({
-    password: z.string().min(8, {
-      message: 'Mật khẩu phải có ít nhất 8 ký tự',
-    }),
-    confirmPassword: z.string().min(8, {
-      message: 'Mật khẩu phải có ít nhất 8 ký tự',
-    }),
-  });
+  // const formSchema = z.object({
+  //   password: z.string().min(8, {
+  //     message: 'Mật khẩu phải có ít nhất 8 ký tự',
+  //   }),
+  //   confirmPassword: z.string().min(8, {
+  //     message: 'Mật khẩu phải có ít nhất 8 ký tự',
+  //   }),
+  // });
 
-  const { mutate: loginAction, isPending, isSuccess } = useLoginMutation();
+  // const { mutate: loginAction, isPending, isSuccess } = useLoginMutation();
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    mode: 'onChange',
-    defaultValues: {
-      password: '',
-      confirmPassword: '',
-    },
-  });
+  // const form = useForm<z.infer<typeof formSchema>>({
+  //   resolver: zodResolver(formSchema),
+  //   mode: 'onChange',
+  //   defaultValues: {
+  //     password: '',
+  //     confirmPassword: '',
+  //   },
+  // });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {};
+  // const onSubmit = (values: z.infer<typeof formSchema>) => {};
 
-  useEffect(() => {
-    if (isSuccess) {
-      form.reset();
-    }
-  }, [isSuccess, form]);
+  // useEffect(() => {
+  //   if (isSuccess) {
+  //     form.reset();
+  //   }
+  // }, [isSuccess, form]);
 
-  useEffect(() => {
-    if (error) {
-      form.setError('password', {
-        message: error,
-      });
-    }
-  }, [error, form]);
+  // useEffect(() => {
+  //   if (error) {
+  //     form.setError('password', {
+  //       message: error,
+  //     });
+  //   }
+  // }, [error, form]);
 
   return (
     <div className='bg-login-background min-h-screen w-full bg-cover object-contain bg-no-repeat flex justify-center items-center p-4 sm:p-6'>
@@ -95,7 +95,7 @@ const ForgotPasswordPage = () => {
           </CardDescription>
         </CardHeader>
         <CardContent className='space-y-6'>
-          <Form {...form}>
+          {/* <Form {...form}>
             <form
               className='flex flex-col gap-4'
               onSubmit={form.handleSubmit(onSubmit)}
@@ -136,7 +136,7 @@ const ForgotPasswordPage = () => {
                 Cập nhật mật khẩu
               </Button>
             </form>
-          </Form>
+          </Form> */}
         </CardContent>
       </Card>
     </div>

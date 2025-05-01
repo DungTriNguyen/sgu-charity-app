@@ -22,7 +22,7 @@ import { useLoginMutation } from '@/hooks/use-login';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -196,4 +196,10 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+const SuspenseWrapper = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <LoginPage />
+  </Suspense>
+);
+
+export default SuspenseWrapper;

@@ -1,5 +1,5 @@
 'use client';
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -7,62 +7,62 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { useLoginMutation } from '@/hooks/use-login';
-import { zodResolver } from '@hookform/resolvers/zod';
+// import {
+//   Form,
+//   FormControl,
+//   FormField,
+//   FormItem,
+//   FormLabel,
+//   FormMessage,
+// } from '@/components/ui/form';
+// import { Input } from '@/components/ui/input';
+// import { useLoginMutation } from '@/hooks/use-login';
+// import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
+// import { useSearchParams } from 'next/navigation';
+// import { useEffect } from 'react';
+// import { useForm } from 'react-hook-form';
+// import { z } from 'zod';
 
 const ForgotPasswordPage = () => {
-  const searchParams = useSearchParams();
-  const error = searchParams.get('error');
+  // const searchParams = useSearchParams();
+  // const error = searchParams.get('error');
 
-  const formSchema = z.object({
-    email: z.string().email({
-      message: 'Email không hợp lệ',
-    }),
-  });
+  // const formSchema = z.object({
+  //   email: z.string().email({
+  //     message: 'Email không hợp lệ',
+  //   }),
+  // });
 
-  const { mutate: loginAction, isPending, isSuccess } = useLoginMutation();
+  // const { mutate: loginAction, isPending, isSuccess } = useLoginMutation();
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    mode: 'onChange',
-    defaultValues: {
-      email: '',
-    },
-  });
+  // const form = useForm<z.infer<typeof formSchema>>({
+  //   resolver: zodResolver(formSchema),
+  //   mode: 'onChange',
+  //   defaultValues: {
+  //     email: '',
+  //   },
+  // });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    const { email } = values;
-    // Add empty password to satisfy type requirements
-    loginAction({ email, password: '' });
-  };
+  // const onSubmit = (values: z.infer<typeof formSchema>) => {
+  //   const { email } = values;
+  //   // Add empty password to satisfy type requirements
+  //   loginAction({ email, password: '' });
+  // };
 
-  useEffect(() => {
-    if (isSuccess) {
-      form.reset();
-    }
-  }, [isSuccess, form]);
+  // useEffect(() => {
+  //   if (isSuccess) {
+  //     form.reset();
+  //   }
+  // }, [isSuccess, form]);
 
-  useEffect(() => {
-    if (error) {
-      form.setError('email', {
-        message: error,
-      });
-    }
-  }, [error, form]);
+  // useEffect(() => {
+  //   if (error) {
+  //     form.setError('email', {
+  //       message: error,
+  //     });
+  //   }
+  // }, [error, form]);
 
   return (
     <div className='bg-login-background min-h-screen w-full bg-cover object-contain bg-no-repeat flex justify-center items-center p-4 sm:p-6'>
@@ -95,7 +95,7 @@ const ForgotPasswordPage = () => {
           </CardDescription>
         </CardHeader>
         <CardContent className='space-y-6'>
-          <Form {...form}>
+          {/* <Form {...form}>
             <form
               className='flex flex-col gap-4'
               onSubmit={form.handleSubmit(onSubmit)}
@@ -122,7 +122,7 @@ const ForgotPasswordPage = () => {
                 Tiếp tục
               </Button>
             </form>
-          </Form>
+          </Form> */}
         </CardContent>
       </Card>
     </div>

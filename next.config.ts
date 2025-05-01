@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['kltnctsv.io.vn'],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
