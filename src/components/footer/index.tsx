@@ -1,4 +1,3 @@
-// ** import image
 import { CAMPAIGN_TYPE } from '@/app/enum';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,7 +5,7 @@ import logo from '../../../public/sgu-logo.png';
 
 const PROGRAMS_ITEMS = [
   {
-    label: 'Tất cả chiến dịch',
+    label: 'Tất cả chương trình',
     href: '/projects',
   },
   {
@@ -44,7 +43,7 @@ const CONTACT_ITEMS = [
     href: '/contact',
   },
   {
-    label: 'Đăng ký chiến dịch',
+    label: 'Đăng ký chương trình',
     href: '/create-account',
   },
 ];
@@ -68,7 +67,7 @@ const Footer = () => {
 
           <div>
             <p className='text-sm font-semibold tracking-widest text-gray-400 uppercase'>
-              Chiến dịch
+              chương trình
             </p>
 
             <ul className='mt-6 space-y-4'>
@@ -105,10 +104,6 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
-
-              {/* <li>
-                        <a href="#" title="" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Privacy Policy </a>
-                    </li> */}
             </ul>
           </div>
 

@@ -44,7 +44,7 @@ const ProjectPage = ({
         ))}
       </div>
       <h3 className='text-center font-bold text-3xl mb-10'>
-        Danh sách chiến dịch gây quỹ
+        Danh sách chương trình gây quỹ
       </h3>
 
       <ProjectComponent />

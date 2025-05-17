@@ -13,7 +13,6 @@ const AccountList = ({ type, search }: { type: string; search: string }) => {
     page,
   });
 
-  // Reset state when type or search changes
   useEffect(() => {
     setPage(1);
     setAllItems([]);

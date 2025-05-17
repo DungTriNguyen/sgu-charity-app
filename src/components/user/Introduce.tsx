@@ -2,8 +2,6 @@ import { Card } from '../ui/card';
 import { Description } from '@radix-ui/react-toast';
 
 const Introduce = ({ data }: { data: TUser }) => {
-  // const { data: userProfile } = useGetUserProfileQuery();
-  // console.log(userProfile, 'userProfile');
   return (
     <div className='w-full'>
       <Card className='shadow-md hover:shadow-lg transition-shadow duration-300'>

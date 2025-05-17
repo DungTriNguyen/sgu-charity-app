@@ -35,11 +35,8 @@ const CampaignSlider = () => {
           className='relative'
         >
           {category?.data?.map((categories: TSCategotyData) => {
-            // Function to modify SVG with custom classes
             const customizeSvg = (svgString: string) => {
               if (!svgString) return '';
-
-              // Add custom classes and potentially modify other attributes
               return svgString.replace(
                 '<svg',
                 `<svg 
@@ -49,18 +46,16 @@ const CampaignSlider = () => {
             return (
               <SwiperSlide
                 key={categories.id}
-                className='flex items-center justify-between gap-2 cursor-pointer group py-4 px-[25px]'
+                className='flex items-center justify-center text-center gap-2 cursor-pointer group py-4 px-[25px]'
               >
                 <Link href={`/projects?category=${categories.id}`}>
                   <div
-                    className='p-2.5 rounded-full bg-[#0BAEFF]/10 group-hover:bg-[#ffffff] transition-colors '
+                    className='p-2.5 rounded-full bg-[#0BAEFF]/10 group-hover:bg-[#ffffff] transition-colors justify-items-center '
                     dangerouslySetInnerHTML={{
                       __html: customizeSvg(categories.icon),
                     }}
-                  >
-                    {/* <categories.icon className='w-5 h-5 text-[#0BAEFF] group-hover:text-white' /> */}
-                  </div>
-                  <span className='text-sm text-gray-600 group-hover:text-[#0BAEFF] transition-colors'>
+                  ></div>
+                  <span className='text-sm text-gray-600 group-hover:text-[#0BAEFF] transition-colors '>
                     {categories.name}
                   </span>
                 </Link>

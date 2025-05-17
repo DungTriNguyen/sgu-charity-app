@@ -115,7 +115,6 @@ const OrganizationForm = () => {
   const onSubmit = (data: z.infer<typeof formSchema>) => {
     mutate(data as TRegisterOrganizationForm, {
       onSuccess: () => {
-        // Reset form after successful submission
         form.reset({
           name: '',
           birth: new Date(),
@@ -129,7 +128,6 @@ const OrganizationForm = () => {
           representative_email: '',
           related_images: [],
         });
-        // Force re-render of DropzoneForm
         setDropzoneKey((prev) => prev + 1);
       },
     });

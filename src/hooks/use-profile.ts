@@ -10,7 +10,6 @@ const useGetUserProfileQuery = () => {
     queryFn: async () => {
       try {
         const res = await apiAuth.get('/user/profile');
-        // console.log('user-profile:', res.data);
         return res.data;
       } catch (e: any) {
         throw Error(e);
@@ -68,7 +67,6 @@ const useUpdateUserProfileMutation = () => {
       toast('Thông báo', {
         description: data.message,
       });
-      // Chỉ invalidate query user-profile
       queryClient.invalidateQueries({ queryKey: ['user-profile'] });
     },
     onError: (error: any) => {

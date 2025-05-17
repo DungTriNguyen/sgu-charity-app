@@ -12,7 +12,6 @@ const DonatePage = (props: { params: Promise<{ id: string }> }) => {
   const { id } = params;
   const { data: projectById } = useGetProjectByID({ slug: id });
   const project = projectById?.data?.[0];
-  console.log('donation project token', project);
 
   return (
     <div className='container 2xl:max-w-[1200px] mx-auto my-4 md:my-8 px-4 md:px-6 lg:px-8'>

@@ -1,8 +1,8 @@
 'use client';
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 import { SETTING_TYPE } from '@/app/enum';
 import { useGetSettingPage } from '@/hooks/use-setting';
+import Image from 'next/image';
+import React from 'react';
 
 const PartnerSection: React.FC = () => {
   const {

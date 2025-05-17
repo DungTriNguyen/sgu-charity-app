@@ -25,7 +25,6 @@ export async function middleware(req: NextRequest) {
     '/user/edit-profile',
     '/user/donated-history',
   ];
-  // console.log(protectedRoutes.includes(pathname), pathname, token);
 
   if (!token && protectedRoutes.some((route) => pathname.includes(route))) {
     return NextResponse.redirect(new URL(`/login`, req.url));

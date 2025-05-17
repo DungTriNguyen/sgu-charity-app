@@ -41,7 +41,7 @@ const FollowSection = () => {
         </div>
         <div className='hidden lg:block relative w-full h-[400px] lg:h-[500px]'>
           <Image
-            src={peopleImg.src}
+            src={peopleImg?.src}
             alt='news'
             fill
             className='object-contain'

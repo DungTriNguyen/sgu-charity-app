@@ -8,7 +8,6 @@ const useDepartmentQuery = () => {
     queryFn: async () => {
       try {
         const res = await apiAuth.get('/department');
-        // console.log('department:', res.data);
         return res.data;
       } catch (e: any) {
         throw Error(e?.response?.data?.message);

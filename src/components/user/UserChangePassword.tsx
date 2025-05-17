@@ -44,10 +44,6 @@ const UserChangePassword = () => {
     mutate(updateData);
   }
 
-  // if (isLoading) {
-  //   return <div>Đang tải dữ liệu...</div>;
-  // }
-
   return (
     <Form {...form}>
       <form

@@ -2,19 +2,13 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper/types';
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
-
-// Import Lightbox
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
-
-// import required modules
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
-
 import Image from 'next/image';
 
 const ProjectSwiper = ({ project }: { project: TCampaign }) => {

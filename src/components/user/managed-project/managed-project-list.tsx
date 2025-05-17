@@ -15,7 +15,6 @@ const ManagedProjectList = ({ userId }: { userId: number }) => {
     page,
   });
 
-  // Cập nhật danh sách projects khi có dữ liệu mới
   useEffect(() => {
     if (projectData?.data) {
       if (page === 1) {
@@ -30,7 +29,6 @@ const ManagedProjectList = ({ userId }: { userId: number }) => {
     setPage((prev) => prev + 1);
   };
 
-  // Kiểm tra xem còn dữ liệu để load không
   const hasMore = projectData?.data?.length === limit;
 
   if (isLoading && page === 1) {
@@ -44,7 +42,7 @@ const ManagedProjectList = ({ userId }: { userId: number }) => {
   if (allProjects.length === 0) {
     return (
       <Card className='p-4 flex flex-col gap-4'>
-        <div className='text-center'>Không có dự án nào</div>
+        <div className='text-center'>Không có chương trình nào</div>
       </Card>
     );
   }

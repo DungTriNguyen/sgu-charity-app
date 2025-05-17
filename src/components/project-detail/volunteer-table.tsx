@@ -70,7 +70,6 @@ const VolunteerTable = (props: IVolunteerList) => {
     },
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
-    // getPaginationRowModel: getPaginationRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFacetedRowModel: getFacetedRowModel(),
     getFacetedUniqueValues: getFacetedUniqueValues(),
@@ -81,7 +80,6 @@ const VolunteerTable = (props: IVolunteerList) => {
 
   return (
     <div className='space-y-4'>
-      {/* <DataTableToolbar table={table} /> */}
       <div className='rounded-md border'>
         <Table className='min-w-[650px] overflow-auto'>
           <TableHeader>

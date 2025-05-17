@@ -1,6 +1,5 @@
 import { api } from '@/services/api-client';
 import NextAuth from 'next-auth';
-// import { jwtDecode } from 'jwt-decode';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 const handler = NextAuth({
@@ -12,8 +11,6 @@ const handler = NextAuth({
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials): Promise<any> {
-        // Replace this with your own authentication logic
-
         try {
           const res = await api.post('/login', {
             email: credentials?.email,
@@ -32,13 +29,13 @@ const handler = NextAuth({
     }),
   ],
   pages: {
-    signIn: '/login', // Optional: Custom sign-in page
+    signIn: '/login',
     error: '/login',
     newUser: '/sign-up',
     signOut: '/logout',
   },
   session: {
-    strategy: 'jwt', // JWT is recommended for credentials
+    strategy: 'jwt',
   },
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
@@ -46,7 +43,6 @@ const handler = NextAuth({
     },
     async jwt({ token, user }: { user: any; token: any }) {
       if (user) {
-        console.log(user, 'user', token, 'token');
         return user;
 
         // token.accessToken = user.accessToken;

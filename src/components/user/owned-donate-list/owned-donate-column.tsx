@@ -18,15 +18,15 @@ export const donatedColumn: ColumnDef<TDonatedData>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: 'name',
+    accessorKey: 'supporter',
     header: ({ column }) => (
       <DataTableColumnHeader column={column}>
         Người ủng hộ
       </DataTableColumnHeader>
     ),
-    cell: ({ renderValue }) => (
+    cell: ({ row }) => (
       <div className='min-w-[70px] max-w-[300px] w-full'>
-        {renderValue() as string}
+        {row.getValue('supporter') as string}
       </div>
     ),
     enableSorting: false,
@@ -35,10 +35,10 @@ export const donatedColumn: ColumnDef<TDonatedData>[] = [
 
   {
     accessorKey: 'project_name',
-    header: 'Tên Chiến dịch',
+    header: 'Tên chương trình',
     cell: ({ row }) => {
       const project = row.original.project;
-      return <div>{project?.name || 'Không có tên chiến dịch'}</div>;
+      return <div>{project?.name || 'Không có tên chương trình'}</div>;
     },
     enableSorting: false,
     enableHiding: false,
@@ -110,15 +110,15 @@ export const statisticColumn: ColumnDef<TDonatedData>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: 'name',
+    accessorKey: 'supporter',
     header: ({ column }) => (
       <DataTableColumnHeader column={column}>
         Người ủng hộ
       </DataTableColumnHeader>
     ),
-    cell: ({ renderValue }) => (
+    cell: ({ row }) => (
       <div className='min-w-[70px] max-w-[300px] w-full'>
-        {renderValue() as string}
+        {row.getValue('supporter') as string}
       </div>
     ),
     enableSorting: false,
@@ -126,10 +126,10 @@ export const statisticColumn: ColumnDef<TDonatedData>[] = [
   },
   {
     accessorKey: 'project_name',
-    header: 'Tên Chiến dịch',
+    header: 'Tên chương trình',
     cell: ({ row }) => {
       const project = row.original.project;
-      return <div>{project?.name || 'Không có tên chiến dịch'}</div>;
+      return <div>{project?.name || 'Không có tên chương trình'}</div>;
     },
     enableSorting: false,
     enableHiding: false,

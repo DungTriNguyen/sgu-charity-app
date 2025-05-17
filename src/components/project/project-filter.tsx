@@ -52,13 +52,14 @@ const ProjectFilter = () => {
   return (
     <Suspense
       fallback={
-        <div className='text-center py-10'>Đang tải thông tin dự án...</div>
+        <div className='text-center py-10'>
+          Đang tải thông tin chương trình...
+        </div>
       }
     >
       <Form {...form}>
         <form>
           <div className='flex flex-col md:flex-row flex-wrap justify-start lg:justify-between gap-3 max-md:p-4 md:gap-4 mb-4 md:mb-8'>
-            {/* Trạng thái */}
             <div className='flex items-center gap-2'>
               <FormField
                 control={form.control}
@@ -92,7 +93,6 @@ const ProjectFilter = () => {
                 )}
               />
 
-              {/* Loại chương trình */}
               <FormField
                 control={form.control}
                 name='category'
@@ -120,7 +120,6 @@ const ProjectFilter = () => {
                 )}
               />
 
-              {/* Loại đóng góp */}
               <FormField
                 control={form.control}
                 name='type'

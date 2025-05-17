@@ -401,9 +401,6 @@ const EditProfileForm = () => {
             <FormItem className='col-span-1'>
               <FormLabel>Khoa</FormLabel>
               <Select
-                // onValueChange={(value) =>
-                //   field.onChange(value ? Number(value) : null)
-                // }
                 onValueChange={field.onChange}
                 value={field.value ?? ''}
                 defaultValue={field.value ?? ''}

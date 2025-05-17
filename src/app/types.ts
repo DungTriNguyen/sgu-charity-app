@@ -199,6 +199,7 @@ type TSDonationData = {
   is_anonymous: number;
   anonymous_status_label: string;
   anonymous_status_badge: string;
+  payment_method_code: string;
   note: string | null;
   student_code: string | null;
   class: string | null;

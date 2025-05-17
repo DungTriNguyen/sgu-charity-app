@@ -9,11 +9,9 @@ import { useForm } from 'react-hook-form';
 import { useDebounce } from '@/hooks/use-debounce';
 import { usePagination } from '@/hooks/use-pagination';
 
-// const userId = 7;
-
 const mapToDonatedData = (data: TSDonationData): TDonatedData => ({
   id: String(data.id),
-  supporter: data.name || '',
+  supporter: data?.user?.name || '',
   amount: data.amount,
   updatedAt: data.created_at,
   project_id: String(data.project.id),
@@ -21,7 +19,7 @@ const mapToDonatedData = (data: TSDonationData): TDonatedData => ({
   created_at: data.created_at,
   status: data.is_anonymous,
   status_label: data.anonymous_status_label,
-  payment_method_code: data.code || '',
+  payment_method_code: data?.payment_method_code || '',
   project: {
     name: data.project.name || '',
   },
@@ -30,12 +28,10 @@ const mapToDonatedData = (data: TSDonationData): TDonatedData => ({
 const OwnedDonateList = ({
   type = 'donate',
   userId,
-  // projects_belong_to_user_id,
   keyParam = 'user_id',
 }: {
   type: 'donate' | 'receive';
   userId: number;
-  // projects_belong_to_user_id?: number;
   keyParam?: 'user_id' | 'projects_belong_to_user_id';
 }) => {
   const { register, watch } = useForm();
@@ -44,11 +40,9 @@ const OwnedDonateList = ({
   const { currentPage, setCurrentPage, setItemsPerPage } = usePagination({});
 
   const { data: donations } = useDonationQuery({
-    // user_id: userId || undefined,
     limit: 10,
     page: currentPage || 1,
     keyword: debouncedSearch ? debouncedSearch : null,
-    // projects_belong_to_user_id: projects_belong_to_user_id,
     [keyParam]: userId,
   });
   return (

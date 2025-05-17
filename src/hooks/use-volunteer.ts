@@ -1,9 +1,8 @@
 'use client';
-import { useMutation, useQuery, UseQueryResult } from '@tanstack/react-query';
-import { useAxiosAuth } from './use-axios-auth';
-import { useSession } from 'next-auth/react';
-import { toast } from 'sonner';
 import { queryClient } from '@/app/providers/client';
+import { useMutation, useQuery, UseQueryResult } from '@tanstack/react-query';
+import { toast } from 'sonner';
+import { useAxiosAuth } from './use-axios-auth';
 
 const useVolunteerQuery = ({
   limit,
@@ -79,4 +78,4 @@ const useRegisterVolunteerMutation = () => {
   });
 };
 
-export { useVolunteerQuery, useRegisterVolunteerMutation };
+export { useRegisterVolunteerMutation, useVolunteerQuery };

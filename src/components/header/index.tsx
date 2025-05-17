@@ -53,7 +53,7 @@ const Header = () => {
 
   const CATEGORY_ITEMS = [
     {
-      label: 'Chiến dịch',
+      label: 'chương trình',
       href: '/projects',
       icon: '📢',
     },
@@ -318,7 +318,7 @@ const Header = () => {
           <div className='hidden md:flex items-center gap-4'>
             <Link href='/create-account' className='flex items-center gap-2'>
               <Button variant='default' className='hover:opacity-70'>
-                Tạo dự án
+                Tạo chương trình
               </Button>
             </Link>
           </div>

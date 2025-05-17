@@ -20,14 +20,10 @@ const usePostContactMutation = () => {
       }
     },
     onSuccess: (data) => {
-      // console.log('Contact form submitted', data);
-      // Optionally invalidate or update related queries if needed
-      // queryClient.invalidateQueries({ queryKey: ['contacts'] });
       toast.success('Thành công', {
         description: 'Thông tin đã được gửi thành công',
         duration: 5000,
       });
-      
     },
     onError: (error) => {
       toast.error('Lỗi', {

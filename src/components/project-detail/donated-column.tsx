@@ -24,9 +24,9 @@ export const donatedColumn: ColumnDef<TSDonationData>[] = [
         Người ủng hộ
       </DataTableColumnHeader>
     ),
-    cell: ({ renderValue }) => (
+    cell: ({ row }) => (
       <div className='min-w-[70px] max-w-[300px] w-full'>
-        {renderValue() as string}
+        {row.getValue('name') as string}
       </div>
     ),
     enableSorting: false,

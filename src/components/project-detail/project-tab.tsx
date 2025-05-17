@@ -6,27 +6,15 @@ import DonatedList from './donated-list';
 import VolunteerList from './volunteer-list';
 import { CAMPAIGN_TYPE } from '@/app/enum';
 
-// const tabList = [
-//   { label: 'Câu chuyện', value: 'summary', component: <SummaryCampaign /> },
-//   { label: 'Danh sách ủng hộ', value: 'supported', component: <DonatedList /> },
-//   { label: 'Danh sách TNV', value: 'vulunteer', component: <VolunteerList /> },
-// ];
-
 const ProjectTab = ({ project }: { project: TCampaign }) => {
   const cleanContent = DOMPurify.sanitize(project?.content || '', {
     ADD_TAGS: ['img'],
     ADD_ATTR: ['src', 'alt', 'width', 'height'],
     FORBID_ATTR: ['onerror', 'onload'],
   });
-
-  // Loại bỏ ảnh có src rỗng
   cleanContent.replace(/<Image[^>]*src=["']{1}["'][^>]*>/g, '');
-
-  // Initialize an empty tab list
   let tabList: { label: string; value: string; component: React.ReactNode }[] =
     [];
-
-  // Populate the tab list based on the project type
   if (project?.type === CAMPAIGN_TYPE.DONATE) {
     tabList = [
       {

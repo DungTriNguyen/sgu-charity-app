@@ -74,7 +74,6 @@ const useGetProjectByID = ({ slug }: { slug: string }) => {
     queryFn: async () => {
       try {
         const res = await apiAuth.get(`/project?project_slug=${slug}`);
-        console.log('res kkkkkkkkkkkkkkk:', res.data);
         return res.data;
       } catch (error: unknown) {
         if (error instanceof Error) {

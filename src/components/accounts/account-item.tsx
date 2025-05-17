@@ -28,7 +28,7 @@ const AccountItem = ({ data }: { data: TUser }) => {
         <p className='text-sm md:text-base'>
           Số tiền gây quỹ:{' '}
           <span className='font-bold'>
-            {formatCurrencyToVND(data?.projects_donations_sum_amount)}
+            {formatCurrencyToVND(Number(data?.projects_donations_sum_amount))}
           </span>
         </p>
         <p className='text-sm md:text-base'>

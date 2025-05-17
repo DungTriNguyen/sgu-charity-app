@@ -31,21 +31,21 @@ export const volunteerColumn: ColumnDef<TSVolunteer>[] = [
     enableSorting: false,
     enableHiding: false,
   },
-  {
-    accessorKey: 'project_name',
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column}>
-        Chiến dịch tham gia
-      </DataTableColumnHeader>
-    ),
-    cell: ({ row }) => (
-      <div className='min-w-[60px] max-w-[300px]'>
-        {row.getValue('project_name')}
-      </div>
-    ),
-    enableSorting: false,
-    enableHiding: false,
-  },
+  // {
+  //   accessorKey: 'project_name',
+  //   header: ({ column }) => (
+  //     <DataTableColumnHeader column={column}>
+  //       Chương trình tham gia
+  //     </DataTableColumnHeader>
+  //   ),
+  //   cell: ({ row }) => (
+  //     <div className='min-w-[60px] max-w-[300px]'>
+  //       {row.getValue('project_name')}
+  //     </div>
+  //   ),
+  //   enableSorting: false,
+  //   enableHiding: false,
+  // },
 
   {
     accessorKey: 'created_at',

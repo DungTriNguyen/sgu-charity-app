@@ -13,7 +13,6 @@ const UserLayout = ({
   children: React.ReactNode;
 }>) => {
   const pathname = usePathname();
-  // console.log();
 
   const { data: profile } = useGetUserProfileQuery();
   const { mutate } = useUpdateUserAvatarMutation();
@@ -47,9 +46,6 @@ const UserLayout = ({
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      // Handle the file upload logic here
-      // console.log('Selected file:', file);
-      // You can use a function to upload the file and update the avatar URL
       const payload = new Promise(async (resolve) => {
         const base64 = await toBase64(file);
         resolve({

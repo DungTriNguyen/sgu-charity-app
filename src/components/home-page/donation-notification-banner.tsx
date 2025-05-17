@@ -21,11 +21,7 @@ const DonationNotificationBanner: React.FC = () => {
   const getTimeDifference = (targetDate: string) => {
     const now = new Date().getTime();
     const target = new Date(targetDate).getTime();
-
-    // Get difference in milliseconds
     const diffMs = now - target;
-
-    // Convert to different units
     const diffSeconds = Math.floor(diffMs / 1000);
     const diffMinutes = Math.floor(diffSeconds / 60);
     const diffHours = Math.floor(diffMinutes / 60);
@@ -33,7 +29,6 @@ const DonationNotificationBanner: React.FC = () => {
     const diffMonths = Math.floor(diffDays / 30);
     const diffYears = Math.floor(diffDays / 365);
 
-    // Return appropriate string based on the largest applicable unit
     if (diffYears >= 1) {
       return `${diffYears} năm trước`;
     } else if (diffMonths >= 1) {
@@ -51,16 +46,14 @@ const DonationNotificationBanner: React.FC = () => {
 
   useEffect(() => {
     if (donations && Array.isArray(donations.data)) {
-      setNotifications(donations.data); // Chỉ set nếu donations.data là mảng
+      setNotifications(donations.data);
     }
   }, [donations]);
 
-  // Handle loading state
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
-  // Handle error state
   if (error) {
     return <div>Error fetching donations: {error.message}</div>;
   }
@@ -73,7 +66,6 @@ const DonationNotificationBanner: React.FC = () => {
             '--swiper-navigation-color': '#fff',
             '--swiper-pagination-color': '#00A7EF',
             '--swiper-pagination-bottom': '0',
-            // 'swiper-navigation-disabled': true,
           } as React.CSSProperties
         }
         loop={true}

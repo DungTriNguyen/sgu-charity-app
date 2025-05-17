@@ -17,7 +17,6 @@ const DropzoneForm = (props: IDropzonePreview) => {
       'image/png': ['.png', '.jpg', '.gif'],
     },
     onDrop: async (acceptedFiles) => {
-      // console.log(acceptedFiles);
       const fileForm = await Promise.all(
         acceptedFiles.map(async (file: File) => {
           const base64 = await toBase64(file);
@@ -27,7 +26,6 @@ const DropzoneForm = (props: IDropzonePreview) => {
           };
         })
       );
-      // console.log(fileForm);
 
       props.onChange(fileForm as TUploadImage[]);
     },
@@ -71,7 +69,6 @@ const DropzoneForm = (props: IDropzonePreview) => {
       <aside>
         <h4>Files</h4>
         <ul>{files}</ul>
-        {/* <button onClick={() => convertToBase64(acceptedFiles[0])}>Convert to Base64</button> */}
       </aside>
     </section>
   );

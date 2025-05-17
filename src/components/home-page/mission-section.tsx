@@ -7,7 +7,6 @@ const MissionSection = () => {
       <h3 className='text-center text-3xl font-bold p-4'>
         Sứ mệnh của chúng tôi
       </h3>
-      {/* <Separator className='mt-4' /> */}
       <p className='text-center mt-4'>
         “SGU Charity giúp trẻ em và thanh thiếu niên có hoàn cảnh khó khăn ở
         Việt Nam phát triển hết tiềm năng của mình thông qua nền tảng giáo dục

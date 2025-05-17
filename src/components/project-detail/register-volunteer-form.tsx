@@ -2,7 +2,6 @@
 import { useDepartmentQuery } from '@/hooks/use-department';
 import { useRegisterVolunteerMutation } from '@/hooks/use-volunteer';
 import { zodResolver } from '@hookform/resolvers/zod';
-// import { useParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Button } from '../ui/button';
@@ -33,8 +32,6 @@ import { useGetUserProfileQuery } from '@/hooks/use-profile';
 import { useSession } from 'next-auth/react';
 
 const RegisterVolunteerForm = ({ projectId }: { projectId: number }) => {
-  // const params = useParams();
-  // const projectId = params?.id || 0;
   const { mutate, isPending } = useRegisterVolunteerMutation();
   const { data: departments } = useDepartmentQuery();
   const { data: userProfile, isLoading: isLoadingProfile } =
@@ -85,7 +82,6 @@ const RegisterVolunteerForm = ({ projectId }: { projectId: number }) => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     if (!session?.user?.detail?.id) {
-      console.error('User ID not found in session');
       return;
     }
 
@@ -184,7 +180,8 @@ const RegisterVolunteerForm = ({ projectId }: { projectId: number }) => {
                 Thông tin của bạn
               </p>
               <p className='italic text-xs md:text-sm'>
-                Vui lòng điền thông tin sinh viên để được tham gia vào dự án
+                Vui lòng điền thông tin sinh viên để được tham gia vào chương
+                trình
               </p>
             </div>
             <FormField

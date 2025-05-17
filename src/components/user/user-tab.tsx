@@ -20,7 +20,7 @@ const UserTab = ({
     component: React.ReactNode;
   }[] = [
     {
-      label: 'giới thiệu',
+      label: 'Giới thiệu',
       value: 'introduce',
       component: <Introduce data={detail as TUser} />,
     },
@@ -32,7 +32,7 @@ const UserTab = ({
     {
       label: 'Tham gia',
       value: 'participate',
-      component: <OwnedParticipantList userId={detail.id} />, // need to be separate component
+      component: <OwnedParticipantList userId={detail.id} />,
     },
   ];
 
@@ -42,12 +42,12 @@ const UserTab = ({
     component: React.ReactNode;
   }[] = [
     {
-      label: 'giới thiệu',
+      label: 'Giới thiệu',
       value: 'introduce',
       component: <Introduce data={detail as TUser} />,
     },
     {
-      label: 'Chiến dịch',
+      label: 'chương trình',
       value: 'campaign',
       component: <ManagedProjectList userId={detail.id} />,
     },

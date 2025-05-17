@@ -11,7 +11,6 @@ import { formatCurrencyToVND } from '@/lib/utils';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
-import { useParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Button } from '../ui/button';
@@ -50,8 +49,6 @@ const paymentMethodTransfer = {
 };
 
 const DonateForm = ({ projectId }: { projectId: number }) => {
-  // const params = useParams();
-  // const projectId = params?.id || 0;
   const { data } = useDepartmentQuery();
   const { mutate: donateMutate } = useDonateMutation();
   const { mutate: createMomoPaymentMutate } = useCreateMomoPaymentMutation();
@@ -75,16 +72,6 @@ const DonateForm = ({ projectId }: { projectId: number }) => {
     payment_method_code: z.string().min(1, {
       message: 'Vui lòng chọn phương thức thanh toán',
     }),
-    // account_number: z.string().min(1, {
-    //   message: 'Thông tin không được trống',
-    // }),
-    // account_name: z.string().min(1, {
-    //   message: 'Thông tin không được trống',
-    // }),
-    // code: z.string().min(1, {
-    //   message: 'Thông tin không được trống',
-    // }),
-    // note: z.string().nullable().optional(),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -100,15 +87,10 @@ const DonateForm = ({ projectId }: { projectId: number }) => {
       department_id: '',
       is_anonymous: false,
       payment_method_code: '',
-      // account_number: '',
-      // account_name: '',
-      // code: '',
-      // note: '',
     },
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    // Gọi API tạo donation
     donateMutate(
       {
         ...values,
@@ -160,10 +142,6 @@ const DonateForm = ({ projectId }: { projectId: number }) => {
       }
     );
   };
-  // const selectedPaymentMethod = paymentData?.data.find(
-  //   (item: TPaymentMethod) =>
-  //     item.id.toString() === form.watch('payment_method_id')
-  // );
 
   return (
     <Card className=''>
@@ -198,12 +176,10 @@ const DonateForm = ({ projectId }: { projectId: number }) => {
                             : ''
                         }
                         onChange={(e) => {
-                          // Loại bỏ tất cả ký tự không phải số
                           const numericValue = e.target.value.replace(
                             /[^\d]/g,
                             ''
                           );
-                          // Cập nhật giá trị cho form
                           field.onChange(numericValue);
                         }}
                       />
@@ -349,7 +325,6 @@ const DonateForm = ({ projectId }: { projectId: number }) => {
                   </FormControl>
                   <div className='space-y-1 leading-none'>
                     <FormLabel>Ủng hộ ẩn danh</FormLabel>
-                    {/* <FormDescription>Ủng hộ ẩn danh</FormDescription> */}
                   </div>
                 </FormItem>
               )}
@@ -415,63 +390,6 @@ const DonateForm = ({ projectId }: { projectId: number }) => {
                 </div>
               </div>
             )}
-
-            {/* <FormField
-              control={form.control}
-              name='account_name'
-              render={({ field }) => (
-                <FormItem className='col-span-2'>
-                  <FormLabel>Chủ tài khoản</FormLabel>
-                  <FormControl>
-                    <Input type='text' placeholder='Họ và tên' {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name='account_number'
-              render={({ field }) => (
-                <FormItem className='col-span-1'>
-                  <FormLabel>Số tài khoản</FormLabel>
-                  <FormControl>
-                    <Input type='text' placeholder='Số tài khoản' {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name='code'
-              render={({ field }) => (
-                <FormItem className='col-span-1'>
-                  <FormLabel>Code</FormLabel>
-                  <FormControl>
-                    <Input type='text' placeholder='Code' {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name='note'
-              render={({ field }) => (
-                <FormItem className='col-span-2'>
-                  <FormLabel>Nội dung</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder='Nội dung'
-                      {...field}
-                      value={field.value ?? ''}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />*/}
             <Button
               type='submit'
               className='col-span-2 mt-4'

@@ -26,7 +26,9 @@ const ProjectList = () => {
     <div className='mt-4 md:mt-8'>
       <Suspense
         fallback={
-          <div className='text-center py-10'>Đang tải thông tin dự án...</div>
+          <div className='text-center py-10'>
+            Đang tải thông tin chương trình...
+          </div>
         }
       >
         <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8'>

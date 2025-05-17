@@ -9,13 +9,11 @@ const useGetSettingPage = ({ key }: { key?: SETTING_TYPE }) => {
     queryFn: async () => {
       try {
         const res = await apiAuth.get(`/setting/value/${key}`);
-        // console.log('API Response:', res.data);
         return res.data;
       } catch (e: any) {
         throw Error(e?.response?.data?.message);
       }
     },
-    // enabled: !!token,
   });
 };
 

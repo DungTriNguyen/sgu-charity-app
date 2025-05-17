@@ -115,10 +115,6 @@ const SignUpPage = () => {
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    // console.log('hahahaah:', values);
-
     mutate(values);
   };
 

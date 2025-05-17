@@ -17,7 +17,7 @@ const ArchivementSection = () => {
       color: '#17CAD7',
     },
     {
-      label: 'Chiến dịch',
+      label: 'chương trình',
       value: statistics?.data.project_count || 0,
       color: '#FF6D6D',
     },
@@ -51,10 +51,7 @@ const ArchivementSection = () => {
       </p>
 
       <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 auto-rows-auto gap-4 min-h-[400px]'>
-        {/* Ảnh nền: chỉ hiển thị trên màn hình lớn */}
         <div className='hidden lg:block col-span-4 lg:col-span-1 lg:row-span-2 bg-bg-archievement bg-contain bg-no-repeat bg-center w-full h-full'></div>
-
-        {/* Các thành phần thống kê */}
         {archievements.map((item) => (
           <div
             key={item.label}

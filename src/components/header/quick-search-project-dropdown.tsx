@@ -123,7 +123,7 @@ const QuickSearchProjectDropdown = () => {
           <Input
             {...register('keyword')}
             type='text'
-            placeholder='Tìm kiếm dự án thiện nguyện...'
+            placeholder='Tìm kiếm chương trình thiện nguyện...'
             className='w-full pl-4 pr-10 py-2 text-sm md:text-base'
             autoFocus
           />

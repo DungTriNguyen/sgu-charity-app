@@ -4,10 +4,6 @@ import { Tabs, TabsList, TabsTrigger } from '../ui/tabs';
 import { Input } from '../ui/input';
 import { SearchIcon } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
-// import dynamic from 'next/dynamic';
-
-// Nếu muốn lazy load
-// const AccountList = dynamic(() => import('./account-list'), { suspense: true });
 import AccountList from './account-list';
 
 const AccountFilter = () => {
@@ -80,7 +76,6 @@ const AccountFilter = () => {
         </div>
       </div>
 
-      {/* Bọc bằng Suspense */}
       <Suspense
         fallback={
           <div className='text-center py-10'>Đang tải danh sách...</div>

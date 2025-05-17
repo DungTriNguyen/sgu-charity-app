@@ -17,7 +17,7 @@ const ProjectStatus = ({ project }: { project: TCampaign }) => {
   const params = useParams();
   const router = useRouter();
 
-  const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000'; // dùng biến env nếu có
+  const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
   const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
     `${baseUrl}/projects/${project?.slug}`
   )}`;
@@ -25,7 +25,7 @@ const ProjectStatus = ({ project }: { project: TCampaign }) => {
   return (
     <Card className='p-6 flex flex-col gap-4'>
       <div>
-        <p>Tổ chức / cá nhân đồng hành với chiến dịch </p>
+        <p>Tổ chức / cá nhân đồng hành với chương trình </p>
         <Link href={`/accounts/${project?.user?.username}`}>
           <div className='flex gap-2 items-center'>
             <Image
@@ -46,7 +46,7 @@ const ProjectStatus = ({ project }: { project: TCampaign }) => {
         <div className='flex gap-2'>
           <TargetIcon width='40' height='40' />
           <div className='flex flex-col'>
-            <span className='text-gray-500'>Mục tiêu chiến dịch</span>
+            <span className='text-gray-500'>Mục tiêu chương trình</span>
             {project?.type == CAMPAIGN_TYPE.DONATE && (
               <span className='font-bold text-[#1DA1F2]'>
                 {formatCurrencyToVND(Number(project?.donation_target) || 0)}
@@ -185,9 +185,6 @@ const ProjectStatus = ({ project }: { project: TCampaign }) => {
           </>
         )}
       </div>
-      {/* <Button variant={'link'} className='ml-auto'>
-        Chia sẻ để lan tỏa yêu thương <SquareArrowOutUpRightIcon />
-      </Button> */}
       <Button
         variant='link'
         className='ml-auto'

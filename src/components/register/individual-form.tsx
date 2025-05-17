@@ -117,7 +117,6 @@ const IndividualForm = () => {
   const onSubmit = (data: z.infer<typeof formSchema>) => {
     mutate(data as TRegisterIndividualForm, {
       onSuccess: () => {
-        // Reset form after successful submission
         form.reset({
           name: '',
           birth: new Date(),
@@ -142,13 +141,6 @@ const IndividualForm = () => {
         className='relative grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:p-6 '
         onSubmit={form.handleSubmit(onSubmit)}
       >
-        {/* <Image
-          src='/individual_bg.jpg'
-          alt='individual_bg'
-          width={1080}
-          height={450}
-          className='absolute inset-0 z-0 w-full h-full object-cover'
-        /> */}
         <FormField
           control={form.control}
           name='username'

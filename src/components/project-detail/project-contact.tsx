@@ -9,10 +9,7 @@ import TelephoneIcon from '../icons/telephone-icon';
 
 const ProjectContact = ({ project }: { project: TCampaign }) => {
   const formatPhoneNumber = (phoneNumber: string) => {
-    // Remove all non-numeric characters
     const cleaned = ('' + phoneNumber).replace(/\D/g, '');
-
-    // Check if the input is of correct length
     const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
 
     if (match) {
@@ -23,7 +20,7 @@ const ProjectContact = ({ project }: { project: TCampaign }) => {
   };
   return (
     <Card className='p-6 flex flex-col gap-2'>
-      <h4>Thông tin tổ chức / cá nhân vận động chiến dịch </h4>
+      <h4>Thông tin tổ chức / cá nhân vận động chương trình </h4>
       <Link href={`/accounts/${project?.user?.username}`}>
         <div className='flex gap-2 items-center'>
           <Image

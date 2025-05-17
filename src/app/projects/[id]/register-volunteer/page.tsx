@@ -28,7 +28,7 @@ const RegisterVolunteer = (props: { params: Promise<{ id: string }> }) => {
               />
               <div className=''>
                 <p className='text-sm md:text-base'>
-                  Tình nguyện cho chiến dịch của tổ chức/ cá nhân:
+                  Tình nguyện cho chương trình của tổ chức/ cá nhân:
                 </p>
                 <p className='text-primary text-lg md:text-xl'>
                   {project?.user?.name}
