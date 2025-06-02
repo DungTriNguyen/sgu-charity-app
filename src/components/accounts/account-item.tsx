@@ -26,7 +26,7 @@ const AccountItem = ({ data }: { data: TUser }) => {
           <span className='font-bold'>{data?.id}</span>
         </p>
         <p className='text-sm md:text-base'>
-          Số tiền gây quỹ:{' '}
+          Số tiền kêu gọi ủng hộ:{' '}
           <span className='font-bold'>
             {formatCurrencyToVND(Number(data?.projects_donations_sum_amount))}
           </span>

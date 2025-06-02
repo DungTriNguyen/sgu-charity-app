@@ -175,7 +175,7 @@ const LoginPage = () => {
               Quên mật khẩu
             </Button>
           </div>
-          <div className='space-y-4'>
+          {/* <div className='space-y-4'>
             <p className='text-center text-sm sm:text-base'>Hoặc</p>
             <div className='flex gap-4 justify-center'>
               {socialInfo.map((item) => (
@@ -189,7 +189,7 @@ const LoginPage = () => {
                 </Link>
               ))}
             </div>
-          </div>
+          </div> */}
         </CardContent>
       </Card>
     </div>

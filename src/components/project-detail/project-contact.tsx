@@ -40,19 +40,19 @@ const ProjectContact = ({ project }: { project: TCampaign }) => {
       </Link>
       <div className='flex gap-2 items-center'>
         <FacebookIcon width='36' height='36' />
-        <Link href={'https://facebook.com'}>
+        <Link href={`${project.user.facebook}`} target='_blank'>
           {project.user.facebook || 'Đang cập nhật...'}
         </Link>
       </div>
       <div className='flex gap-2 items-center'>
         <GmailIcon width='36' height='36' />
-        <Link href={'https://gmail.com'}>
+        <Link href={`mailto:${project.user.email}`} target='_blank'>
           {project.user.email || 'Đang cập nhật...'}
         </Link>
       </div>
       <div className='flex gap-2 items-center'>
         <TelephoneIcon width='36' height='36' />
-        <Link href={'https://gmail.com'}>
+        <Link href={`tel:${project.user.phone_number}`}>
           {project.user.phone_number
             ? formatPhoneNumber(project.user.phone_number)
             : 'Đang cập nhật...'}

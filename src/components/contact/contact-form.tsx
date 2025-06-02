@@ -152,7 +152,7 @@ const ContactForm = () => {
                       Chủ đề <span style={{ color: 'red' }}>*</span>
                     </FormLabel>
                     <FormControl>
-                      <Input type='text' placeholder='facebook' {...field} />
+                      <Input type='text' placeholder='Chủ đề' {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

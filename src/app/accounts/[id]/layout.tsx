@@ -26,7 +26,7 @@ const UserHeader = () => {
         </div>
       </div>
 
-      <div className='container 2xl:max-w-[1200px] mx-auto my-2 relative pt-12 px-2 md:px-4 space-y-6'>
+      <div className='container 2xl:max-w-[1200px] mx-auto my-2 relative pt-12 px-2 md:px-4 space-y-6 '>
         <div className='absolute top-[-84px] left-1/2 transform -translate-x-1/2 flex flex-col items-center'>
           <Avatar className='w-28 h-28 md:w-40 md:h-40 mx-auto rounded-full border-4 border-primary shadow-md transition-all duration-300'>
             <AvatarImage src={user?.avatar_url} alt={user?.username} />
@@ -63,7 +63,7 @@ const UserLayout = ({
       </Suspense>
 
       {/* Children content */}
-      <div className='container 2xl:max-w-[1200px] mx-auto my-2 relative pt-12 px-2 md:px-4'>
+      <div className='container 2xl:max-w-[1200px] mx-auto my-2 relative pt-12 px-2 md:px-4 mt-10'>
         {children}
       </div>
     </>

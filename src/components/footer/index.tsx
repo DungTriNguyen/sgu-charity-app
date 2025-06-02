@@ -55,13 +55,14 @@ const Footer = () => {
         <div className='grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12'>
           <div className='col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8'>
             <Link href='/' title=''>
-              <Image
-                className='w-auto h-11 m-auto'
-                src={logo.src}
-                alt=''
-                height={48}
-                width={48}
-              />
+              <div className='relative w-auto h-20 lg:ml-10 aspect-square'>
+                <Image
+                  src='/logo.png'
+                  alt='logo'
+                  fill
+                  className='object-cover'
+                />
+              </div>
             </Link>
           </div>
 
