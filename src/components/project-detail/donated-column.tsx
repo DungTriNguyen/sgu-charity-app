@@ -24,11 +24,15 @@ export const donatedColumn: ColumnDef<TSDonationData>[] = [
         Người ủng hộ
       </DataTableColumnHeader>
     ),
-    cell: ({ row }) => (
-      <div className='min-w-[70px] max-w-[300px] w-full'>
-        {row.getValue('name') as string}
-      </div>
-    ),
+    cell: ({ row }) => {
+      const isAnonymous = row.original?.is_anonymous;
+      const name = row.getValue('name') as string;
+      return (
+        <div className='min-w-[70px] max-w-[300px] w-full'>
+          {isAnonymous ? 'Ẩn danh' : name}
+        </div>
+      );
+    },
     enableSorting: false,
     enableHiding: false,
   },

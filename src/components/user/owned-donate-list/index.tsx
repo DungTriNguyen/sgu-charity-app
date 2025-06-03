@@ -11,7 +11,7 @@ import { usePagination } from '@/hooks/use-pagination';
 
 const mapToDonatedData = (data: TSDonationData): TDonatedData => ({
   id: String(data.id),
-  supporter: data?.user?.name || '',
+  supporter: data.is_anonymous ? 'Ẩn danh' : data?.user?.name || '',
   amount: data.amount,
   updatedAt: data.created_at,
   project_id: String(data.project.id),
