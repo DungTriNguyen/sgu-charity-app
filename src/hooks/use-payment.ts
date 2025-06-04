@@ -10,7 +10,9 @@ export const usePaymentQuery = () => {
     queryKey: ['payment-methods'],
     queryFn: async () => {
       try {
-        const res = await apiAuth.get('/payment-method');
+        const res = await apiAuth.get('/payment-method', {
+          params: { status: 1 },
+        });
         return res.data;
       } catch (error: any) {
         console.error('Fetch payment methods error:', error);
@@ -22,7 +24,6 @@ export const usePaymentQuery = () => {
     },
   });
 };
-
 export const useCreateMomoPaymentMutation = () => {
   const apiAuth = useAxiosAuth();
 

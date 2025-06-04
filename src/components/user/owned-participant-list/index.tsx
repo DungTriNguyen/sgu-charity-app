@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useVolunteerQuery } from '@/hooks/use-volunteer';
 import { useForm } from 'react-hook-form';
@@ -33,17 +33,26 @@ const OwndedParticipantList = ({
 
   const { data: volunteerData, isLoading } = useVolunteerQuery({
     limit: 10,
-    page: 1,
+    page: currentPage,
     projectId: projectId || null,
     keyword: debouncedSearch ? debouncedSearch : null,
     [keyParam]: userId,
   });
+  console.log('volunteer data: ', volunteerData);
+
+  useEffect(() => {
+    if (debouncedSearch !== '') {
+      setCurrentPage(1);
+    }
+  }, [debouncedSearch, setCurrentPage]);
 
   return (
     <Card>
       <CardHeader>
         <CardTitle>Danh sách Tham gia TNV</CardTitle>
-        <CardDescription />
+        {/* <CardDescription>
+          Tổng số: {volunteerData?.pagination?.total || 0} lượt tham gia
+        </CardDescription> */}
       </CardHeader>
       <CardContent className='flex flex-col gap-4'>
         <Input

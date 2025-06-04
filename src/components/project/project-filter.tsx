@@ -22,31 +22,79 @@ import {
 const ProjectFilter = () => {
   const form = useFormContext<z.infer<typeof formSchema>>();
   const searchParams = useSearchParams();
-
   const router = useRouter();
   const { data: categories } = useGetCategoryQuery();
 
-  const defaultValues = {
-    front_status: '',
-    category: '',
-    type: '',
-    keyword: '',
+  // Hàm để cập nhật URL với các params mới
+  const updateUrlParams = (values: z.infer<typeof formSchema>) => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    // Cập nhật hoặc xóa params dựa trên giá trị
+    if (values.keyword) {
+      params.set('keyword', values.keyword);
+    } else {
+      params.delete('keyword');
+    }
+
+    if (values.front_status) {
+      params.set('status', values.front_status);
+    } else {
+      params.delete('status');
+    }
+
+    if (values.type) {
+      params.set('type', values.type);
+    } else {
+      params.delete('type');
+    }
+
+    if (values.category) {
+      params.set('category', values.category);
+    } else {
+      params.delete('category');
+    }
+
+    // Cập nhật URL với params mới
+    router.push(`/projects?${params.toString()}`);
   };
 
+  // Lắng nghe sự thay đổi của form và cập nhật URL
   useEffect(() => {
-    const type = searchParams.get('type');
-    if (type && form.getValues('type') !== type) {
-      form.setValue('type', type);
-    }
-    const category = searchParams.get('category');
-    if (category && form.getValues('category') !== category) {
-      form.setValue('category', category);
-    }
-  }, [searchParams, form]);
+    const subscription = form.watch((value) => {
+      updateUrlParams(value as z.infer<typeof formSchema>);
+    });
+    return () => subscription.unsubscribe();
+  }, [form.watch]);
 
+  // Set giá trị mặc định từ URL params khi component mount
+  useEffect(() => {
+    const keyword = searchParams.get('keyword');
+    const status = searchParams.get('status');
+    const type = searchParams.get('type');
+    const category = searchParams.get('category');
+
+    if (keyword) form.setValue('keyword', keyword);
+    if (status) form.setValue('front_status', status);
+    if (type) form.setValue('type', type);
+    if (category) form.setValue('category', category);
+  }, []);
+
+  // Reset form và xóa tất cả params trong URL
   const resetForm = () => {
-    router.push('/projects');
-    form.reset(defaultValues);
+    // Tạo URL mới chỉ với pathname, không có params
+    const url = new URL(window.location.href);
+    url.search = ''; // Xóa tất cả params
+
+    // Reset form về giá trị mặc định
+    form.reset({
+      keyword: '',
+      front_status: '',
+      type: '',
+      category: '',
+    });
+
+    // Chuyển hướng đến URL không có params
+    router.push(url.pathname);
   };
 
   return (
@@ -67,7 +115,13 @@ const ProjectFilter = () => {
                 render={({ field }) => (
                   <FormItem className='w-full md:w-auto'>
                     <Select
-                      onValueChange={field.onChange}
+                      onValueChange={(value) => {
+                        field.onChange(value);
+                        updateUrlParams({
+                          ...form.getValues(),
+                          front_status: value,
+                        });
+                      }}
                       value={field.value}
                       defaultValue=''
                     >
@@ -99,7 +153,13 @@ const ProjectFilter = () => {
                 render={({ field }) => (
                   <FormItem className='w-full md:w-auto'>
                     <Select
-                      onValueChange={field.onChange}
+                      onValueChange={(value) => {
+                        field.onChange(value);
+                        updateUrlParams({
+                          ...form.getValues(),
+                          category: value,
+                        });
+                      }}
                       value={field.value}
                       defaultValue=''
                     >
@@ -126,7 +186,10 @@ const ProjectFilter = () => {
                 render={({ field }) => (
                   <FormItem className='w-full md:w-auto'>
                     <Select
-                      onValueChange={field.onChange}
+                      onValueChange={(value) => {
+                        field.onChange(value);
+                        updateUrlParams({ ...form.getValues(), type: value });
+                      }}
                       value={field.value || ''}
                     >
                       <FormControl>
@@ -164,7 +227,13 @@ const ProjectFilter = () => {
                           placeholder='Tìm kiếm tên chương trình'
                           className='w-full pr-10'
                           {...field}
-                          onChange={field.onChange}
+                          onChange={(e) => {
+                            field.onChange(e);
+                            updateUrlParams({
+                              ...form.getValues(),
+                              keyword: e.target.value,
+                            });
+                          }}
                         />
                         <SearchIcon className='absolute right-4 top-0 bottom-0 m-auto' />
                       </div>

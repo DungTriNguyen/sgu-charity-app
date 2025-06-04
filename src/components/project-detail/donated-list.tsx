@@ -26,8 +26,10 @@ const DonatedList = ({ project }: { project: TCampaign }) => {
     limit: 10,
     page: currentPage,
     projectId,
+    status: 1,
     keyword: debouncedSearch ? debouncedSearch : null,
   });
+  // console.log('DDDDDDD', donationData);
 
   useEffect(() => {
     if (debouncedSearch !== '') {

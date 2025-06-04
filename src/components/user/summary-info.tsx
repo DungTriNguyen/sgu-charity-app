@@ -18,8 +18,6 @@ const SummaryInfo = ({ summaryInfo }: { summaryInfo: TUser }) => {
     : useGetUserProfileQuery();
 
   const dataProfile = extractUserProfile(listData, username);
-  // const dataProfile = username ? listData?.data?.[0] : listData?.data;
-  console.log('datatataakkk:', dataProfile.projects_donations_sum_amount);
 
   const {
     // donations_with_paid_count,

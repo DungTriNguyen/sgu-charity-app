@@ -68,7 +68,7 @@ const Footer = () => {
 
           <div>
             <p className='text-sm font-semibold tracking-widest text-gray-400 uppercase'>
-              chương trình
+              Chương trình
             </p>
 
             <ul className='mt-6 space-y-4'>

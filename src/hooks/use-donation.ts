@@ -8,6 +8,7 @@ const useDonationQuery = ({
   page,
   projectId,
   user_id,
+  status,
   projects_belong_to_user_id,
   keyword,
 }: {
@@ -15,6 +16,7 @@ const useDonationQuery = ({
   page?: number;
   projectId?: number;
   user_id?: number;
+  status?: number;
   projects_belong_to_user_id?: number;
   keyword?: string;
 }): UseQueryResult<TApiResponse<TSDonationData>, Error> => {
@@ -25,6 +27,7 @@ const useDonationQuery = ({
       page,
       projectId,
       user_id,
+      status,
       projects_belong_to_user_id,
       keyword,
     ],
@@ -36,6 +39,7 @@ const useDonationQuery = ({
             page,
             project_id: projectId,
             user_id,
+            status,
             projects_belong_to_user_id,
             keyword,
           },

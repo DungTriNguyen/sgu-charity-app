@@ -11,7 +11,7 @@ const CreateIndividualAccount = () => {
         </h1>
         {/* <div className='bg-[url("/individual_bg.jpg")] bg-cover bg-center relative filter brightness-75 rounded shadow-md hover:shadow-lg transition-all duration-300'>
           <div className='absolute inset-0 bg-black/50'></div> */}
-        <div className='relative z-10 p-8 text-black'>
+        <div className='bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300'>
           <IndividualForm />
         </div>
         {/* </div>

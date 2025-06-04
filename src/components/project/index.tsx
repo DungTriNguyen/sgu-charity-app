@@ -14,7 +14,11 @@ export const formSchema = z.object({
   category: z.string().optional(),
 });
 
-const ProjectComponent = () => {
+interface ProjectComponentProps {
+  initialRole: string | null;
+}
+
+const ProjectComponent = ({ initialRole }: ProjectComponentProps) => {
   const form = useForm<z.infer<typeof formSchema>>({
     defaultValues: {
       keyword: '',
@@ -24,10 +28,11 @@ const ProjectComponent = () => {
     },
     resolver: zodResolver(formSchema),
   });
+
   return (
     <FormProvider {...form}>
       <ProjectFilter />
-      <ProjectList />
+      <ProjectList initialRole={initialRole} />
     </FormProvider>
   );
 };

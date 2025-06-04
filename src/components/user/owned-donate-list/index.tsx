@@ -11,7 +11,7 @@ import { usePagination } from '@/hooks/use-pagination';
 
 const mapToDonatedData = (data: TSDonationData): TDonatedData => ({
   id: String(data.id),
-  supporter: data.is_anonymous ? 'Ẩn danh' : data?.user?.name || '',
+  supporter: data.is_anonymous ? 'Ẩn danh' : data?.name || '',
   amount: data.amount,
   updatedAt: data.created_at,
   project_id: String(data.project.id),
@@ -42,9 +42,12 @@ const OwnedDonateList = ({
   const { data: donations } = useDonationQuery({
     limit: 10,
     page: currentPage || 1,
+    status: 1,
     keyword: debouncedSearch ? debouncedSearch : null,
     [keyParam]: userId,
   });
+  console.log('pafefkdskds: ', donations);
+
   return (
     <Card className='p-4 flex flex-col gap-4'>
       <Input

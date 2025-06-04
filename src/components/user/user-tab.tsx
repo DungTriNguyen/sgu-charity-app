@@ -47,7 +47,7 @@ const UserTab = ({
       component: <Introduce data={detail as TUser} />,
     },
     {
-      label: 'chương trình',
+      label: 'Chương trình',
       value: 'campaign',
       component: <ManagedProjectList userId={detail.id} />,
     },

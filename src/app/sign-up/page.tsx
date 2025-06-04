@@ -1,6 +1,6 @@
 'use client';
-import FacebookIcon from '@/components/icons/facebook-icon';
-import GmailIcon from '@/components/icons/gmail-icon';
+// import FacebookIcon from '@/components/icons/facebook-icon';
+// import GmailIcon from '@/components/icons/gmail-icon';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -29,18 +29,18 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 const SignUpPage = () => {
-  const socialInfo = [
-    {
-      key: 'facebook',
-      href: 'https://www.facebook.com/TruongDaihocSaiGon.SGU',
-      icon: <FacebookIcon />,
-    },
-    {
-      key: 'gmail',
-      href: 'https://www.sgu.edu.vn/',
-      icon: <GmailIcon />,
-    },
-  ];
+  // const socialInfo = [
+  //   {
+  //     key: 'facebook',
+  //     href: 'https://www.facebook.com/TruongDaihocSaiGon.SGU',
+  //     icon: <FacebookIcon />,
+  //   },
+  //   {
+  //     key: 'gmail',
+  //     href: 'https://www.sgu.edu.vn/',
+  //     icon: <GmailIcon />,
+  //   },
+  // ];
   const router = useRouter();
 
   const formSchema = z
@@ -162,7 +162,9 @@ const SignUpPage = () => {
                 name='name'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Họ tên</FormLabel>
+                    <FormLabel>
+                      Họ tên <span style={{ color: 'red' }}>*</span>
+                    </FormLabel>
                     <FormControl>
                       <Input placeholder='Họ tên' {...field} />
                     </FormControl>
@@ -176,7 +178,9 @@ const SignUpPage = () => {
                 name='email'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel>
+                      Email <span style={{ color: 'red' }}>*</span>
+                    </FormLabel>
                     <FormControl>
                       <Input placeholder='Email' {...field} />
                     </FormControl>
@@ -190,7 +194,9 @@ const SignUpPage = () => {
                 name='phone_number'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Điện thoại</FormLabel>
+                    <FormLabel>
+                      Điện thoại <span style={{ color: 'red' }}>*</span>
+                    </FormLabel>
                     <FormControl>
                       <Input placeholder='Điện thoại' {...field} />
                     </FormControl>
@@ -204,7 +210,9 @@ const SignUpPage = () => {
                 name='password'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Mật khẩu</FormLabel>
+                    <FormLabel>
+                      Mật khẩu <span style={{ color: 'red' }}>*</span>
+                    </FormLabel>
                     <FormControl>
                       <Input
                         placeholder='Mật khẩu'
@@ -222,7 +230,9 @@ const SignUpPage = () => {
                 name='password_confirmation'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Nhập lại mật khẩu</FormLabel>
+                    <FormLabel>
+                      Nhập lại mật khẩu <span style={{ color: 'red' }}>*</span>
+                    </FormLabel>
                     <FormControl>
                       <Input
                         placeholder='Xác nhận mật khẩu'
@@ -247,7 +257,24 @@ const SignUpPage = () => {
                       />
                     </FormControl>
                     <FormLabel className='!mt-0 text-sm sm:text-base'>
-                      Đồng ý với các điều khoản và điều kiện
+                      Đồng ý với các{' '}
+                      <Link
+                        href={'/policy'}
+                        className='underline'
+                        target='_blank'
+                      >
+                        điều khoản
+                      </Link>{' '}
+                      và
+                      <Link
+                        href={'/terms'}
+                        className='underline'
+                        target='_blank'
+                      >
+                        {' '}
+                        chính sách
+                      </Link>{' '}
+                      <span style={{ color: 'red' }}>*</span>
                     </FormLabel>
                   </FormItem>
                 )}

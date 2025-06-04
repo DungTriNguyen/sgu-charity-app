@@ -120,7 +120,9 @@ const LoginPage = () => {
                 name='email'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel>
+                      Email <span style={{ color: 'red' }}>*</span>
+                    </FormLabel>
                     <FormControl>
                       <Input placeholder='Email' {...field} />
                     </FormControl>
@@ -133,7 +135,9 @@ const LoginPage = () => {
                 name='password'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Mật khẩu</FormLabel>
+                    <FormLabel>
+                      Mật khẩu <span style={{ color: 'red' }}>*</span>
+                    </FormLabel>
                     <FormControl>
                       <Input
                         placeholder='Mật khẩu'

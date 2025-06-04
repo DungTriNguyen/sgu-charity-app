@@ -18,7 +18,7 @@ const ProjectProcessing = () => {
         Các chương trình đang diễn ra
       </h3>
       <div className='flex justify-between items-center mb-6'>
-        <span className='font-bold'>chương trình của tổ chức & cá nhân</span>
+        <span className='font-bold'>Chương trình của tổ chức & cá nhân</span>
         <Link href='/projects'>
           <Button variant={'link'}>
             Xem tất cả <MoveRightIcon size={24} />

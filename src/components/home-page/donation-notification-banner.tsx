@@ -12,6 +12,7 @@ const DonationNotificationBanner: React.FC = () => {
     isLoading,
     error,
   } = useDonationQuery({
+    status: 1,
     page: 1,
     limit: 5,
   });
@@ -92,7 +93,7 @@ const DonationNotificationBanner: React.FC = () => {
             <div className='flex gap-4 p-2 pl-2 lg:pt-1 items-center'>
               <div className='h-12 w-12 rounded-full'>
                 <Image
-                  src={item?.user?.avatar_url}
+                  src={item?.user?.avatar_url || ''}
                   alt='avatar'
                   width={100}
                   height={100}

@@ -1,6 +1,6 @@
 'use client';
 
-import { CAMPAIGN_TYPE } from '@/app/enum';
+// import { CAMPAIGN_TYPE } from '@/app/enum';
 import { Avatar } from '@radix-ui/react-avatar';
 import {
   ChevronDownIcon,
@@ -33,27 +33,27 @@ const Header = () => {
   const { data: userProfile } = useGetUserProfileQuery();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const ACTIVITIES_ITEMS = [
-    {
-      label: 'Quyên góp tiền',
-      href: `/projects?type=${CAMPAIGN_TYPE.DONATE}`,
-      icon: '💰',
-    },
-    {
-      label: 'Đăng ký tình nguyện viên',
-      href: `/projects?type=${CAMPAIGN_TYPE.VOLUNTEER}`,
-      icon: '🤝',
-    },
-    {
-      label: 'Quyên góp và ĐKTNV',
-      href: `/projects?type=${CAMPAIGN_TYPE.MULTIPLE}`,
-      icon: '❤️',
-    },
-  ];
+  // const ACTIVITIES_ITEMS = [
+  //   {
+  //     label: 'Quyên góp tiền',
+  //     href: `/projects?type=${CAMPAIGN_TYPE.DONATE}`,
+  //     icon: '💰',
+  //   },
+  //   {
+  //     label: 'Đăng ký tình nguyện viên',
+  //     href: `/projects?type=${CAMPAIGN_TYPE.VOLUNTEER}`,
+  //     icon: '🤝',
+  //   },
+  //   {
+  //     label: 'Quyên góp và ĐKTNV',
+  //     href: `/projects?type=${CAMPAIGN_TYPE.MULTIPLE}`,
+  //     icon: '❤️',
+  //   },
+  // ];
 
   const CATEGORY_ITEMS = [
     {
-      label: 'chương trình',
+      label: 'Chương trình',
       href: '/projects',
       icon: '📢',
     },
@@ -193,7 +193,7 @@ const Header = () => {
                 </Button>
               ))}
             </div>
-            <div className='space-y-2'>
+            {/* <div className='space-y-2'>
               <h3 className='font-medium text-lg'>Hoạt động</h3>
               {ACTIVITIES_ITEMS.map((item) => (
                 <Button
@@ -209,7 +209,7 @@ const Header = () => {
                   {item.label}
                 </Button>
               ))}
-            </div>
+            </div> */}
             <div className='space-y-2'>
               <h3 className='font-medium text-lg'>Về chúng tôi</h3>
               {ABOUT_US_ITEMS.map((item) => (
@@ -307,9 +307,9 @@ const Header = () => {
             </span>
           </Link>
 
-          <div className='hidden md:flex items-center gap-4 pl-[160px] pr-2'>
+          <div className='hidden md:flex items-center gap-4 pl-[250px] pr-2'>
             {renderMenu(CATEGORY_ITEMS, 'Danh mục')}
-            {renderMenu(ACTIVITIES_ITEMS, 'Hoạt động')}
+            {/* {renderMenu(ACTIVITIES_ITEMS, 'Hoạt động')} */}
             {renderMenu(ABOUT_US_ITEMS, 'Về chúng tôi')}
           </div>
         </div>

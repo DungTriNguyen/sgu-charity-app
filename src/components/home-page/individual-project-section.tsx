@@ -18,7 +18,7 @@ const IndividualProjectSection = () => {
   return (
     <div>
       <div className='flex justify-between items-center mb-6'>
-        <span className='font-bold'>chương trình của cá nhân</span>
+        <span className='font-bold'>Chương trình của cá nhân</span>
         <Link href='/projects?filter=individual'>
           <Button variant={'link'}>
             Xem tất cả <MoveRightIcon size={24} />

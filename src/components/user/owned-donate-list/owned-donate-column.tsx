@@ -32,7 +32,6 @@ export const donatedColumn: ColumnDef<TDonatedData>[] = [
     enableSorting: false,
     enableHiding: false,
   },
-
   {
     accessorKey: 'project_name',
     header: 'Tên chương trình',
@@ -58,7 +57,6 @@ export const donatedColumn: ColumnDef<TDonatedData>[] = [
     enableSorting: false,
     enableHiding: false,
   },
-
   {
     accessorKey: 'created_at',
     header: ({ column }) => (

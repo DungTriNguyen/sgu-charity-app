@@ -21,7 +21,7 @@ const OrganizationProjectSection = () => {
         Các chương trình gây quỹ đã và đang diễn ra
       </h3>
       <div className='flex justify-between items-center mb-6'>
-        <span className='font-bold'>chương trình của tổ chức</span>
+        <span className='font-bold'>Chương trình của tổ chức</span>
         <Link href='/projects?filter=organization'>
           <Button variant={'link'}>
             Xem tất cả <MoveRightIcon size={24} />

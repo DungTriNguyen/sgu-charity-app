@@ -10,6 +10,7 @@ const useVolunteerQuery = ({
   projectId,
   keyword,
   user_id,
+  status,
   projects_belong_to_user_id,
 }: {
   limit: number;
@@ -17,6 +18,7 @@ const useVolunteerQuery = ({
   projectId: number | null;
   keyword?: string | null;
   user_id?: number;
+  status?: number;
   projects_belong_to_user_id?: number;
 }): UseQueryResult<TApiResponse<TSVolunteer>, Error> => {
   const apiAuth = useAxiosAuth();
@@ -28,6 +30,7 @@ const useVolunteerQuery = ({
       projectId,
       keyword,
       user_id,
+      status,
       projects_belong_to_user_id,
     ],
     queryFn: async () => {
@@ -39,6 +42,7 @@ const useVolunteerQuery = ({
             project_id: projectId,
             keyword,
             user_id,
+            status,
             projects_belong_to_user_id,
           },
         });

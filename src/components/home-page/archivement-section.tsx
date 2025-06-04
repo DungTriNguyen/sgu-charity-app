@@ -17,7 +17,7 @@ const ArchivementSection = () => {
       color: '#17CAD7',
     },
     {
-      label: 'chương trình',
+      label: 'Chương trình',
       value: statistics?.data.project_count || 0,
       color: '#FF6D6D',
     },

@@ -23,7 +23,7 @@ const VolunteerList = ({ project }: { project: TCampaign }) => {
 
   const { data: volunteerData, isLoading } = useVolunteerQuery({
     limit: 10,
-    page: 1,
+    page: currentPage || 1,
     projectId,
     keyword: debouncedSearch ? debouncedSearch : null,
   });
