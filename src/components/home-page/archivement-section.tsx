@@ -41,7 +41,7 @@ const ArchivementSection = () => {
   ];
 
   return (
-    <div className='px-4 py-8'>
+    <div className='px-4 py-8 text-lg'>
       <h3 className='text-3xl font-bold text-center mb-2'>
         Thành quả đạt được
       </h3>
@@ -64,7 +64,7 @@ const ArchivementSection = () => {
               />
               <span>{item.label}</span>
             </div>
-            <div className='font-bold text-xl lg:text-3xl mt-2'>
+            <div className='font-bold text-xl lg:text-4xl mt-2'>
               {item.value}
             </div>
           </div>

@@ -15,6 +15,7 @@ const UserLayout = ({
   const pathname = usePathname();
 
   const { data: profile } = useGetUserProfileQuery();
+
   const { mutate } = useUpdateUserAvatarMutation();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const handleAvatarClick = () => {

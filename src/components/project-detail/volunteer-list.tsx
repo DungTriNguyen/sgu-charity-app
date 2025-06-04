@@ -25,6 +25,7 @@ const VolunteerList = ({ project }: { project: TCampaign }) => {
     limit: 10,
     page: currentPage || 1,
     projectId,
+    status_not_in: 4,
     keyword: debouncedSearch ? debouncedSearch : null,
   });
 

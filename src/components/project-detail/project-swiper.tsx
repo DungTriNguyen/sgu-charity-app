@@ -46,7 +46,7 @@ const ProjectSwiper = ({ project }: { project: TCampaign }) => {
                   width={600}
                   height={450}
                   alt='img-project'
-                  src={item}
+                  src={item || '/avatar.png'}
                   className='w-full h-full bg-contain object-fill'
                   onClick={() => {
                     setPhotoIndex(index);

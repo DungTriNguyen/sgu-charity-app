@@ -28,7 +28,7 @@ const PartnerSection: React.FC = () => {
   return (
     <div>
       <h3 className='text-3xl font-bold text-center p-4'>Đơn vị đồng hành</h3>
-      <p className='text-center'>
+      <p className='text-center text-lg'>
         “Tri ân những cá nhân và tổ chức đã có những đóng góp tích cực và to lớn
         trong tất cả các chương trình đã và đang diễn ra”
       </p>

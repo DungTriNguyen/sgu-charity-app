@@ -31,6 +31,7 @@ import { useGetUserProfileQuery } from '@/hooks/use-profile';
 const Header = () => {
   const router = useRouter();
   const { data: userProfile } = useGetUserProfileQuery();
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // const ACTIVITIES_ITEMS = [

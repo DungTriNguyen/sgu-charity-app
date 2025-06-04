@@ -35,6 +35,7 @@ const OwndedParticipantList = ({
     limit: 10,
     page: currentPage,
     projectId: projectId || null,
+    status_not_in: 4,
     keyword: debouncedSearch ? debouncedSearch : null,
     [keyParam]: userId,
   });
