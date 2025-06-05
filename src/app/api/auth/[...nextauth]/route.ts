@@ -23,7 +23,7 @@ const handler = NextAuth({
           };
         } catch (e) {
           console.log(e);
-          throw new Error('Invalid email or password');
+          throw new Error('Sai thông tin đăng nhập');
         }
       },
     }),
