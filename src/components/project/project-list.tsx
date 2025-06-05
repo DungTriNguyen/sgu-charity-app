@@ -19,7 +19,7 @@ const ProjectList = ({ initialRole }: ProjectListProps) => {
   const { data: projectData, isLoading } = useGetProjectQuery({
     role: initialRole,
     keyword: form.watch('keyword'),
-    front_status: form.watch('front_status') as CAMPAIGN_STATUS,
+    front_status: form.watch('front_status'),
     type: form.watch('type') as CAMPAIGN_TYPE,
     category: form.watch('category'),
     page: page,
@@ -36,7 +36,6 @@ const ProjectList = ({ initialRole }: ProjectListProps) => {
     form.watch('category'),
     initialRole,
   ]);
-
   useEffect(() => {
     if (projectData?.data) {
       if (page === 1) {

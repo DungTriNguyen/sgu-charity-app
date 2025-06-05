@@ -43,19 +43,23 @@ const useGetProjectQuery = ({
             user_id,
             page,
             limit,
+            category,
+            type,
+            front_status,
           },
         });
+        const result = res.data?.data;
 
-        const result = res.data?.data.filter((item: TCampaign) => {
-          if (!(front_status || type || category)) return item;
-          return (
-            (!!front_status
-              ? item.front_status_label === front_status
-              : item) &&
-            (!!type ? item.type === type : item) &&
-            (!!category ? `${item.category.id}` === category : item)
-          );
-        });
+        // const result = res.data?.data.filter((item: TCampaign) => {
+        //   if (!(front_status || type || category)) return item;
+        //   return (
+        //     (!!front_status
+        //       ? item.front_status_label === front_status
+        //       : item) &&
+        //     (!!type ? item.type === type : item) &&
+        //     (!!category ? `${item.category.id}` === category : item)
+        //   );
+        // });
 
         return {
           data: result,

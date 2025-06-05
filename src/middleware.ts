@@ -22,6 +22,7 @@ export async function middleware(req: NextRequest) {
   const protectedRoutes = [
     '/register-volunteer',
     '/user/profile',
+    '/user/change-password',
     '/user/edit-profile',
     '/user/donated-history',
   ];

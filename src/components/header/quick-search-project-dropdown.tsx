@@ -26,7 +26,7 @@ const QuickSearchProjectDropdown = () => {
   const debouncedSearch = useDebounce(searchKeyword, 300);
   const { data: searchResults, isLoading } = useGetProjectQuery({
     keyword: debouncedSearch,
-    front_status: CAMPAIGN_STATUS.IN_PROGRESS,
+    front_status: '1',
   });
   const handleSearch = React.useCallback(
     (keyword: string) => {

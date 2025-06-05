@@ -16,12 +16,19 @@ export enum SETTING_TYPE {
   COMPANION_UNIT = 'companion_unit',
 }
 
-export enum CAMPAIGN_STATUS {
-  IN_PROGRESS = 'Đang thực hiện',
-  COMPLETED = 'Đạt mục tiêu',
-  ENDED = 'Đã kết thúc',
-  PENDING = 'Tạm dừng',
-}
+// export enum CAMPAIGN_STATUS {
+//   IN_PROGRESS = 'Đang thực hiện',
+//   COMPLETED = 'Đạt mục tiêu',
+//   ENDED = 'Đã kết thúc',
+//   PENDING = 'Tạm dừng',
+// }
+
+export const CAMPAIGN_STATUS = {
+  IN_PROGRESS: { value: '1', label: 'Đang diễn ra' },
+  COMPLETED: { value: '2', label: 'Đạt mục tiêu' },
+  ENDED: { value: '3', label: 'Đã kết thúc' },
+  PENDING: { value: '4', label: 'Tạm dừng' },
+};
 
 export enum USER_ROLES {
   USER = 'user',

@@ -19,7 +19,7 @@ const IndividualProjectSection = () => {
     <div>
       <div className='flex justify-between items-center mb-6'>
         <span className='font-bold'>Chương trình của cá nhân</span>
-        <Link href='/projects?filter=individual'>
+        <Link href='/projects?role=cá%20nhân%20gây%20quỹ'>
           <Button variant={'link'}>
             Xem tất cả <MoveRightIcon size={24} />
           </Button>
