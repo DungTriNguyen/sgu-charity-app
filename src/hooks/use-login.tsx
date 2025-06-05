@@ -12,15 +12,21 @@ const useLoginMutation = () => {
       email: string;
       password: string;
     }) => {
-      await signIn('credentials', {
-        callbackUrl: '/',
-        redirect: true,
+      const result = await signIn('credentials', {
+        redirect: false,
         email,
         password,
       });
+
+      if (!result?.ok) {
+        throw new Error(result?.error || 'Đăng nhập thất bại.');
+      }
+
+      return result;
     },
     onSuccess: () => {
-      toast.success('Đăng nhập thành công!', { duration: 10000 });
+      toast.success('Đăng nhập thành công!', { duration: 5000 });
+      window.location.href = '/';
     },
     onError: (error) => {
       toast.error(`Đăng nhập thất bại: ${error.message}`, { duration: 5000 });

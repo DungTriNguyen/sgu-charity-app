@@ -40,6 +40,21 @@ const usePostRegisterMutation = () => {
   });
 };
 
+function parseApiError(error: any): string {
+  const resData = error?.response?.data;
+
+  if (resData?.message) return resData.message;
+  const errors = resData?.errors;
+  if (errors && typeof errors === 'object') {
+    const firstErrorArray = Object.values(errors)[0];
+    if (Array.isArray(firstErrorArray)) {
+      return firstErrorArray[0];
+    }
+  }
+
+  return 'Đã xảy ra lỗi không xác định.';
+}
+
 const usePostRegisterIndividualMutation = () => {
   const apiAuth = useAxiosAuth();
   return useMutation<TApiResponse, Error, TRegisterIndividualForm>({
@@ -58,7 +73,7 @@ const usePostRegisterIndividualMutation = () => {
     },
     onError: (error) => {
       toast.error('Lỗi', {
-        description: error.message,
+        description: parseApiError(error),
         duration: 5000,
       });
     },
@@ -83,7 +98,7 @@ const usePostRegisterOrganizationMutation = () => {
     },
     onError: (error) => {
       toast.error('Lỗi', {
-        description: error.message,
+        description: parseApiError(error),
         duration: 5000,
       });
     },

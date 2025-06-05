@@ -47,7 +47,6 @@ const ProjectPage = ({
             ? `/projects?role=${encodeURIComponent(tab.role)}`
             : '/projects';
 
-          console.log('Tab Link:', { tab: tab.value, href }); // Debug tab links
 
           return (
             <Link

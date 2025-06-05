@@ -33,7 +33,7 @@ type TCampaign = {
     status_badge: string;
     gender: string;
     address: string | null;
-    avatar_url?: string;
+    avatar_url: string;
     description: string | null;
     facebook: string | null;
     youtube: string | null;
@@ -42,8 +42,8 @@ type TCampaign = {
   name: string | null; // "Nhóm 1"
   slug: string; // "nhom-1"
   type: string; // "Quyên góp và tình nguyện"
-  background_image?: string; // URL
-  related_images?: string[]; // URL
+  background_image: string; // URL
+  related_images: string[]; // URL
   content?: string | null;
   donation_percent?: number | null;
   donations_with_paid_sum_amount?: number;
@@ -156,7 +156,7 @@ type TSDonationData = {
     created_at: string | null;
     updated_at: string | null;
     deleted_at: string | null;
-    avatar_url?: string;
+    avatar_url: string;
     media: TDonationMedia[];
   };
   project: {
@@ -174,8 +174,8 @@ type TSDonationData = {
     created_at: string | null;
     updated_at: string | null;
     front_status: string;
-    background_image?: string;
-    related_images?: string;
+    background_image: string;
+    related_images: string;
     media: TDonationMedia[];
   };
   department: {
@@ -210,8 +210,8 @@ type TSSetting = {
   data: {
     key: string;
     value: string | null;
-    image?: string;
-    images?: [string];
+    image: string;
+    images: [string];
   };
 };
 
@@ -230,7 +230,7 @@ type TSVolunteer = {
       status_badge: string;
       gender: string;
       address: string | null;
-      avatar_url?: string;
+      avatar_url: string;
       description: string | null;
     };
     project: {
@@ -247,8 +247,8 @@ type TSVolunteer = {
       type: string;
       created_at: string;
       updated_at: string;
-      background_image?: string;
-      related_images?: [];
+      background_image: string;
+      related_images: [];
       front_status: null;
       media: [];
     };

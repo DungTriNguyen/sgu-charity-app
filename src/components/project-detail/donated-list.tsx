@@ -29,7 +29,6 @@ const DonatedList = ({ project }: { project: TCampaign }) => {
     status: 1,
     keyword: debouncedSearch ? debouncedSearch : null,
   });
-  // console.log('DDDDDDD', donationData);
 
   useEffect(() => {
     if (debouncedSearch !== '') {

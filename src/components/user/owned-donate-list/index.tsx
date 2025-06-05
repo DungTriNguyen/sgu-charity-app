@@ -46,7 +46,6 @@ const OwnedDonateList = ({
     keyword: debouncedSearch ? debouncedSearch : null,
     [keyParam]: userId,
   });
-  console.log('pafefkdskds: ', donations);
 
   return (
     <Card className='p-4 flex flex-col gap-4'>

@@ -14,7 +14,7 @@ interface IDropzonePreview {
 const DropzoneForm = (props: IDropzonePreview) => {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     accept: {
-      'image/png': ['.png', '.jpg', '.gif'],
+      'image/png': ['.png', '.jpg', '.webp', '.gif'],
     },
     onDrop: async (acceptedFiles) => {
       const fileForm = await Promise.all(

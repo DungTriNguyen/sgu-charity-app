@@ -32,7 +32,7 @@ const ProjectStatus = ({ project }: { project: TCampaign }) => {
               alt='avatar'
               width={48}
               height={48}
-              src={project?.user?.avatar_url}
+              src={project?.user?.avatar_url || ''}
               className='rounded-full aspect-square'
             />
             <p className='text-lg font-bold text-[#1DA1F2]'>

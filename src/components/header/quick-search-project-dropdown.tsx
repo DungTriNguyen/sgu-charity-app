@@ -70,7 +70,7 @@ const QuickSearchProjectDropdown = () => {
               >
                 <div className='flex gap-3 md:gap-5'>
                   <Image
-                    src={project.background_image}
+                    src={project.background_image || ''}
                     alt={project.name || 'image search'}
                     width={80}
                     height={80}
