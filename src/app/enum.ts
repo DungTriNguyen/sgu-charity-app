@@ -48,6 +48,7 @@ export enum USER_GENDER {
 //   BANK_TRANSFER = 'Chuyển khoản qua ngân hàng',
 //   MOMO = 'Thanh toán qua MoMo',
 // }
+
 export enum PAYMENT_METHOD {
   VNPAY = '1',
   MOMO = '2',

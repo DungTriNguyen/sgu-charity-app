@@ -157,34 +157,42 @@ const ProjectStatus = ({ project }: { project: TCampaign }) => {
         </>
       )}
 
-      <div className='flex justify-around'>
-        {project?.type === CAMPAIGN_TYPE.DONATE && (
-          <Button onClick={() => router.push(`${params.id}/donate`)}>
-            Ủng hộ tiền
-          </Button>
-        )}
-        {project?.type === CAMPAIGN_TYPE.VOLUNTEER && (
-          <Button
-            variant={'outline'}
-            onClick={() => router.push(`${params.id}/register-volunteer`)}
-          >
-            Tham gia tình nguyện
-          </Button>
-        )}
-        {project?.type === CAMPAIGN_TYPE.MULTIPLE && (
-          <>
+      {project?.front_status === 1 ? (
+        <div className='flex justify-around'>
+          {project?.type === CAMPAIGN_TYPE.DONATE && (
             <Button onClick={() => router.push(`${params.id}/donate`)}>
               Ủng hộ tiền
             </Button>
+          )}
+
+          {project?.type === CAMPAIGN_TYPE.VOLUNTEER && (
             <Button
-              variant={'outline'}
+              variant='outline'
               onClick={() => router.push(`${params.id}/register-volunteer`)}
             >
               Tham gia tình nguyện
             </Button>
-          </>
-        )}
-      </div>
+          )}
+
+          {project?.type === CAMPAIGN_TYPE.MULTIPLE && (
+            <>
+              <Button onClick={() => router.push(`${params.id}/donate`)}>
+                Ủng hộ tiền
+              </Button>
+              <Button
+                variant='outline'
+                onClick={() => router.push(`${params.id}/register-volunteer`)}
+              >
+                Tham gia tình nguyện
+              </Button>
+            </>
+          )}
+        </div>
+      ) : (
+        <p className='text-center text-md italic '>
+          "Chương trình đã kết thúc, tạm dừng hoặc đã đạt mục tiêu đề ra"
+        </p>
+      )}
       <Button
         variant='link'
         className='ml-auto'

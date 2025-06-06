@@ -110,7 +110,7 @@ const DonationNotificationBanner: React.FC = () => {
                 </p>
 
                 <p className='italic text-[#1DA1F2]'>
-                  <span className='text-black'>số tiền: </span>
+                  <span className='text-black'>Số tiền: </span>
                   {formatCurrencyToVND(Number(item?.amount)) || 0}
                 </p>
                 <p className='italic'>{getTimeDifference(item.created_at)}</p>

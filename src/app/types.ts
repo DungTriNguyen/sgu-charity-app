@@ -12,7 +12,7 @@ type TCampaign = {
   id: number;
   is_organization: boolean;
   is_individual: boolean;
-  front_status: string;
+  front_status: number;
   front_status_label: string; // "Đã kết thúc"
   category: {
     id: number;

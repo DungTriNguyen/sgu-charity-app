@@ -23,7 +23,7 @@ const ProjectItem = ({ project }: { project: TCampaign }) => {
   }
 
   return (
-    <div className='w-full rounded-xl p-1   hover:cursor-pointer max-md:p-4 bg-white max-md:shadow-md hover:shadow-lg transition-shadow'>
+    <div className='w-full rounded-xl p-1 hover:cursor-pointer max-md:p-4 bg-white max-md:shadow-md hover:shadow-lg transition-shadow'>
       <div
         className={cn(
           'rounded-xl overflow-hidden h-[200px] md:h-[250px] lg:h-[300px] bg-opacity-10 bg-cover mb-2 flex flex-col p-2 relative'
@@ -33,6 +33,11 @@ const ProjectItem = ({ project }: { project: TCampaign }) => {
           router.push(`/projects/${project?.slug}`);
         }}
       >
+        <div className='flex justify-end'>
+          <h3 className='absolute bg-white opacity-90 px-2 py-1 rounded-full text-[#1DA1F2]'>
+            {project?.front_status_label}
+          </h3>
+        </div>
         <div className='absolute top-0 left-0 right-0 bottom-0 bg-white bg-opacity-20 '></div>
         <div className='bg-black text-accent bg-opacity-50 mt-auto rounded-full py-2 md:py-3 lg:py-4 px-3 md:px-4 lg:px-6 flex gap-2 items-center z-10'>
           <div className='w-full'>

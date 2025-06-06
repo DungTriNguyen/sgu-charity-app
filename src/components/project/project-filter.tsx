@@ -37,9 +37,9 @@ const ProjectFilter = () => {
     }
 
     if (values.front_status) {
-      params.set('status', values.front_status);
+      params.set('front_status', values.front_status);
     } else {
-      params.delete('status');
+      params.delete('front_status');
     }
 
     if (values.type) {
@@ -69,7 +69,7 @@ const ProjectFilter = () => {
   // Set giá trị mặc định từ URL params khi component mount
   useEffect(() => {
     const keyword = searchParams.get('keyword');
-    const status = searchParams.get('status');
+    const status = searchParams.get('front_status');
     const type = searchParams.get('type');
     const category = searchParams.get('category');
 
