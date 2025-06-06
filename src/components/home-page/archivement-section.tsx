@@ -46,8 +46,7 @@ const ArchivementSection = () => {
         Thành quả đạt được
       </h3>
       <p className='text-center mb-6'>
-        Kể từ năm 2006, VinaCapital Foundation đã tự hào thay đổi cuộc sống của
-        mọi người:
+        Kể từ năm 2006, SGU Charity đã tự hào thay đổi cuộc sống của mọi người:
       </p>
 
       <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 auto-rows-auto gap-4 min-h-[400px]'>

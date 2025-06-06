@@ -9,6 +9,7 @@ import { SessionProvider } from 'next-auth/react';
 const EXCLUDED_HEADER_FOOTER_PATHS = [
   '/login',
   '/sign-up',
+  '/not-found',
   '/forgot-password',
   '/enter-change-new-password',
 ];
