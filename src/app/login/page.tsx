@@ -170,14 +170,14 @@ const LoginPage = () => {
                 Đăng ký ngay
               </Button>
             </div>
-            <Button
+            {/* <Button
               variant={'link'}
               className='p-0 text-sm sm:text-base'
               type='button'
               onClick={() => router.push('/forgot-password')}
             >
               Quên mật khẩu
-            </Button>
+            </Button> */}
           </div>
           {/* <div className='space-y-4'>
             <p className='text-center text-sm sm:text-base'>Hoặc</p>

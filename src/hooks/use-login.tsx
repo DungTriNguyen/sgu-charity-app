@@ -28,7 +28,7 @@ const useLoginMutation = () => {
       toast.success('Đăng nhập thành công!', { duration: 5000 });
       setTimeout(() => {
         window.location.href = '/';
-      }, 300);
+      }, 3000);
     },
     onError: (error) => {
       toast.error(`Đăng nhập thất bại: ${error.message}`, { duration: 5000 });
